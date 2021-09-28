@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+    pastelnode:
+        build: .
+        container_name: pastelnode
+        command: >
+                bash -c "./pastel-utility install node --force || true
+                && ./pastel-utility start node
+                && ps -A
+                "
